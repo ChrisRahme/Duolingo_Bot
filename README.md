@@ -55,7 +55,7 @@
 
 ## 3. Start
 
-Open `main.py`. A new Chrome window with Duolingo will open and the bot will log you in.
+Start `main.py`. A new Chrome window with Duolingo will open (unless in headless mode) and the bot will log you in.
 
 The bot will keep making mistakes at first, but once a sentence has been learned, it will be memorized (unless `dictionary.json` is erased).
 
