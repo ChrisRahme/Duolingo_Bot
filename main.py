@@ -61,6 +61,7 @@ def practiceCourse(practice):
     challenge = None
     url       = 'https://www.duolingo.com/practice' if practice else 'https://www.duolingo.com/learn'
 
+    driver.get(url)
     wait = WebDriverWait(driver, 120)
     wait.until(lambda driver: driver.current_url == url)
 
@@ -107,6 +108,5 @@ if __name__ == '__main__':
         try:
             practiceCourse(not settings['headless'] and settings['practice'])
         except Exception as e:
-            print(e)
-            time.sleep(30)
+            time.sleep(5)
             continue
