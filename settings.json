@@ -1,0 +1,9 @@
+{
+    "chromedriver_path": "E:\\Program Files (x86)\\Chromedriver\\chromedriver.exe",
+
+    "headless": false,
+    "incognito": false,
+    "mute": false,
+
+    "practice": true
+}
