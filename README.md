@@ -2,7 +2,9 @@
 
 ## 1. Requirements
 
-1. Install Chrome and its according Chromedriver version
+1. Install Chrome
+
+1. Install Chromedriver for your Chrome version from [chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
 
 1. Install Python 3.8, 3.9, or 3.10 (more versions could be compatible)
 
@@ -47,7 +49,7 @@
     - `headless` will make the program run in the background if set to `true`
     - `incognito` will open Chrome in incognito mode if set to `true`
     - `mute` will mute Chrome if set to `true`
-    - `practice` will let the program learn and run forver if set to `true`, otherwise you will be asked to manually enter a skill every time
+    - `practice` will let the program learn and run forever if set to `true`, otherwise, you will be asked to manually enter a skill every time
 
     Note: If `headless` is set to `true`, the program will always run in practice mode
 
@@ -66,4 +68,4 @@ The supported challenges are:
 - **Form**, where you must fill in the blanks
 - **Select**, where you select the picture and translation representing a given word
 
-The listening and speaking challenges are always skipped. There may be other types of challenges I do not know of - When encoutering these, the skill will be restarted.
+The listening and speaking challenges are always skipped. There may be other types of challenges I do not know of - When encountering these, the skill will be restarted.
