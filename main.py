@@ -59,6 +59,7 @@ def checkChallenge():
 
 def practiceCourse(practice):
     challenge = None
+    count     = 0
     url       = 'https://www.duolingo.com/practice' if practice else 'https://www.duolingo.com/learn'
 
     driver.get(url)
@@ -81,11 +82,13 @@ def practiceCourse(practice):
             continue_button.click()
             continue
 
-        challenge = checkChallenge()
+        if count > 0:
+            challenge = checkChallenge()
 
         if challenge is not None:
             challenge_function = getattr(challenges, challenge)
             challenge_function(driver)
+            count += 1
 
 
 
