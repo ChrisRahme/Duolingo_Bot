@@ -5,5 +5,6 @@
     "incognito": false,
     "mute": false,
 
-    "practice": true
+    "practice": true,
+    "practice_count": 50
 }

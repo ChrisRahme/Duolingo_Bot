@@ -49,11 +49,11 @@ def login():
 
 
 def checkChallenge():
-    challenges = ['translate', 'listen', 'listenTap', 'speak', 'form', 'name', 'select', 'completeReverseTranslation']
+    challenges = ['translate', 'listen', 'listenTap', 'speak', 'form', 'name', 'select', 'completeReverseTranslation', 'assist']
 
     for challenge in challenges:
         if helpers.findElementByXpath(driver, f'//div[@data-test="challenge challenge-{challenge}"]'):
-            print(f'\n>>> Challenge: {challenge}')
+            print(f'\n> Challenge: {challenge}')
             return challenge
 
 
@@ -107,9 +107,13 @@ if __name__ == '__main__':
 
     login()
 
-    while True:
+    i = 0
+    while i < settings['practice_count']:
+        print(f'\n>>> Practice {i + 1} of {settings["practice_count"]}')
+
         try:
             practiceCourse(not settings['headless'] and settings['practice'])
         except Exception as e:
             time.sleep(5)
-            continue
+
+        i += 1

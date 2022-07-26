@@ -151,3 +151,27 @@ def completeReverseTranslation(driver):
     else:
         print('No keyboard button found')
         helpers.block()
+
+
+def assist(driver):
+    challenge = 'assist'
+
+    sentence = helpers.findTextByXpath(driver, '//h1[@data-test="challenge-header"]')
+
+    print(f'Sentence: {sentence}')
+    translation = helpers.getFromDictionary(challenge, sentence)
+
+    if translation:
+        print(f'Solution: {translation}')
+
+        choices = helpers.findElementsByXpath(driver, '//div[@data-test="challenge-choice"]')
+
+        for choice in choices:
+            if helpers.findElementsByXpath(choice, '//div[@data-test="challenge-judge-text"]').text == translation:
+                choice.click()
+                break
+
+    else:
+        translation = helpers.skipAndAddToDictionary(driver, challenge, sentence)
+
+        print(f'Learned solution: {translation}')
